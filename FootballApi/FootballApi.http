@@ -1,6 +1,66 @@
-@FootballApi_HostAddress = http://localhost:5232
+@RootUrl = http://localhost:5232
 
-GET {{FootballApi_HostAddress}}/weatherforecast/
+###
+GET {{RootUrl}}/api/FootballTeam
 Accept: application/json
 
 ###
+GET {{RootUrl}}/api/FootballPlayer
+Accept: application/json
+
+###
+GET {{RootUrl}}/api/FootballTeam/1
+Accept: application/json
+
+###
+GET {{RootUrl}}/api/Footballplayer/1
+Accept: application/json
+
+###
+POST {{RootUrl}}/api/FootBallTeam
+Content-Type: application/json
+{
+    "id": 4,
+    "name": "Free Fire United",
+    "yearFounded": 1976,
+    "country": "Germany",
+    "manager": "Mr P"
+}
+
+###
+POST {{RootUrl}}/api/FootballPlayer
+Content-Type: application/json
+{
+    "id": 4,
+    "name": "Peter Yola",
+    "team": "DareDevil Fc",
+    "age": 26,
+    "nationality": "Swedish"
+}
+
+###
+PUT {{RootUrl}}/api/FootballTeam/1
+Content-Type: application/json
+{
+    "id": 1,
+    "name": "Yuko warriors United",
+    "yearFounded": 1945,
+    "country": "France",
+    "manager": "Mr T"
+}
+###
+PUT {{RootUrl}}/api/FootballPlayer/2
+Content-Type: application/json
+{
+    "id": 2,
+    "name": "Jimmy Fred",
+    "team": "Astro Rovers",
+    "age": 30,
+    "nationality": "French/Polish"
+}
+
+###
+DELETE {{RootUrl}}/api/FootballTeam/4
+
+###
+DELETE {{RootUrl}}/api/FootballPlayer/4
