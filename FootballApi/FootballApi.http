@@ -20,7 +20,6 @@ Accept: application/json
 POST {{RootUrl}}/api/FootBallTeam
 Content-Type: application/json
 {
-    "id": 4,
     "name": "Free Fire United",
     "yearFounded": 1976,
     "country": "Germany",
@@ -31,7 +30,6 @@ Content-Type: application/json
 POST {{RootUrl}}/api/FootballPlayer
 Content-Type: application/json
 {
-    "id": 4,
     "name": "Peter Yola",
     "team": "DareDevil Fc",
     "age": 26,
