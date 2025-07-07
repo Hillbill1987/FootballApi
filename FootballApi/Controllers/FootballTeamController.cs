@@ -61,25 +61,34 @@ namespace FootballApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<FootballTeam>> AddTeam(FootballTeam newTeam)
+        public async Task<ActionResult<FootballTeam>> AddTeam(CreatedFootballTeamDto newTeamDto)
         {
-            if (newTeam == null)
+            if (newTeamDto == null)
                 return BadRequest();
+
+            var newTeam = new FootballTeam
+            {
+                Name = newTeamDto.Name,
+                YearFounded = newTeamDto.YearFounded,
+                Country = newTeamDto.Country,
+                Manager = newTeamDto.Manager
+            };
+
             _dataContext.teams.Add(newTeam);
             await _dataContext.SaveChangesAsync();
             return CreatedAtAction(nameof(GetTeamByid), new { id = newTeam.Id }, newTeam);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> updateTeam(int id, FootballTeam updatedTeam)
+        public async Task<IActionResult> updateTeam(int id, UpdatedFootballTeamDto updatedDto)
         {
             var team = await _dataContext.teams.FindAsync(id);
             if (team == null)
                 return NotFound();
-            team.Name = updatedTeam.Name;
-            team.YearFounded = updatedTeam.YearFounded;
-            team.Manager = updatedTeam.Manager;
-            team.Country = updatedTeam.Country;
+            team.Name = updatedDto.Name;
+            team.YearFounded = updatedDto.YearFounded;
+            team.Country = updatedDto.Country;
+            team.Manager = updatedDto.Manager;
 
             await _dataContext.SaveChangesAsync();
 
