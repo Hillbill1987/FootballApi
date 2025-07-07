@@ -20,17 +20,17 @@ Accept: application/json
 POST {{RootUrl}}/api/FootBallTeam
 Content-Type: application/json
 {
-    "name": "Free Fire United",
+    "name": "Free Fire cars united",
     "yearFounded": 1976,
-    "country": "Germany",
-    "manager": "Mr P"
+    "country": "Portugal",
+    "manager": "Mr PL"
 }
 
 ###
 POST {{RootUrl}}/api/FootballPlayer
 Content-Type: application/json
 {
-    "name": "Peter Yola",
+    "name": "Peter Alex andrews",
     "team": "DareDevil Fc",
     "age": 26,
     "nationality": "Swedish"
@@ -41,17 +41,17 @@ PUT {{RootUrl}}/api/FootballTeam/1
 Content-Type: application/json
 {
     "id": 1,
-    "name": "Yuko warriors United",
+    "name": "Yuko warriors Rosethorn United",
     "yearFounded": 1945,
     "country": "France",
-    "manager": "Mr T"
+    "manager": "Mr wq"
 }
 ###
 PUT {{RootUrl}}/api/FootballPlayer/2
 Content-Type: application/json
 {
     "id": 2,
-    "name": "Jimmy Fred",
+    "name": "Jimmy sandstorm",
     "team": "Astro Rovers",
     "age": 30,
     "nationality": "French/Polish"
